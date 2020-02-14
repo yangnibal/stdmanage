@@ -1,0 +1,28 @@
+a{
+    text-decoration: none;
+}
+$color: #0f4c81;
+.home-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .link{
+        width: calc((100% - 30rem) / 3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid $color;
+        margin: 1rem;
+        padding: 6rem 0;
+        color: $color;
+        font-weight: 600;
+        font-size: 1.5rem;
+        &:hover{
+            background: $color;
+            color: white;
+        }
+    }
+}
