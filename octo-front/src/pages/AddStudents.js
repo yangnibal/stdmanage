@@ -1,6 +1,7 @@
 import React from 'react'
 import { observer } from 'mobx-react'
 import { observable, action } from 'mobx'
+import '../scss/students.scss'
 
 @observer
 class AddStudents extends React.Component{
@@ -13,8 +14,8 @@ class AddStudents extends React.Component{
         return(
             <div className="addstudent-container">
                 <div className="input-container">
-                    <input name="student" value={this.student} onChange={this.handleChange} placeholder="추가할 학생 이름을 입력해주세요..."/>
-                </div>    
+                    <input className="input" name="student" value={this.student} onChange={this.handleChange} placeholder="추가할 학생 이름을 입력해주세요..."/>
+                </div>   
             </div>
         )
     }

@@ -19,6 +19,7 @@ from rest_framework import routers
 from books.views import BooksViewSet
 from problems.views import ProblemsViewSet
 from student.views import StudentViewSet
+from account.views import UserViewSet
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -26,6 +27,7 @@ router = routers.DefaultRouter()
 router.register(r'books', BooksViewSet)
 router.register(r'problems', ProblemsViewSet)
 router.register(r'students', StudentViewSet)
+router.register(r'users', UserViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
