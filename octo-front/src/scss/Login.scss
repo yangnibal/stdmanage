@@ -1,0 +1,22 @@
+.login-container{
+    background: #fffffe;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .input-wrapper{
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        .input{
+            border-radius: 5px;
+            padding: 2rem;
+            font-size: 1.5rem;
+            text-align: center;
+            border: 0.5px solid #6246ea;
+            width: 100%;
+        }
+    }
+}

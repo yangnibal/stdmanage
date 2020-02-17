@@ -1,14 +1,34 @@
 import React from 'react'
 import { observer } from 'mobx-react'
 import { observable, action } from 'mobx'
+import axios from 'axios'
 import '../scss/students.scss'
 
 @observer
 class AddStudents extends React.Component{
     @observable student = ""
+    @observable books = []
     @action handleChange = (e) => {
         const { name, value } = e.target
         this[name] = value
+    }
+    @action getBooks = () => {
+        const token = localStorage.getItem("token")
+        axios.get("http://localhost:8000/books/", {
+            headers: {
+                Authorization: "Token " + token
+            }
+        })
+        .then(res => {
+            console.log(res)
+            this.books = res.data
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
+    componentDidMount(){
+        this.getBooks()
     }
     render(){
         return(

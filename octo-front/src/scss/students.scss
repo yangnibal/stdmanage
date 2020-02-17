@@ -7,6 +7,7 @@ $color: #0f4c81;
     min-height: 100vh;
     display: flex;
     justify-content: center;
+    background: #fffffe;
     .sticky-container{
         margin: 5rem;
         width: calc(100% - 4rem);
@@ -44,9 +45,17 @@ $color: #0f4c81;
     justify-content: center;
     .input-container{
         width: 60%;
+        display: flex;
+        justify-content: center;
         .input{
             width: 100%;
             font-size: 1.2rem;
+            padding: 1rem;
+            text-align: center;
+            outline: none;
+            border-radius: 5px;
+            border: 0.5px solid #6246ea;
+            color: #2b2c34;
         }
     }
 }
