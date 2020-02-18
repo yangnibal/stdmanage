@@ -41,19 +41,29 @@ class Login extends React.Component{
             console.log(err)
         })
     }
+    @action handleKeyPress = (e) => {
+        if(e.key==="Enter"){
+            this.handleLogin(this.username, this.password)
+        }
+    }
     componentDidMount(){
-        this.handleLogout()
+        const token = localStorage.getItem("token")
+        if(token!==null){
+            this.handleLogout()
+        }
     }
     render(){
         return(
             <div className="login-container">
                 <div className="input-wrapper">
-                    <input name="username" value={this.username} onChange={this.handleChange} className="input" placeholder="이름"/>
+                    <i className="fas fa-user icon"></i>
+                    <input onKeyPress={this.handleKeyPress} name="username" value={this.username} onChange={this.handleChange} className="input" placeholder="이름"/>
                 </div>
                 <div className="input-wrapper">
-                    <input name="password" value={this.password} onChange={this.handleChange} className="input" placeholder="비밀번호"/>
+                    <i className="fas fa-lock icon"></i>
+                    <input onKeyPress={this.handleKeyPress} type="password" name="password" value={this.password} onChange={this.handleChange} className="input" placeholder="비밀번호"/>
                 </div>
-                <button className="login-btn" onClick={() => this.handleLogin(this.username, this.password)}>로그인</button>
+                <button className={this.username!==""&&this.password!=="" ? "login-btn-hover" : "login-btn"} onClick={() => this.handleLogin(this.username, this.password)}>로그인</button>
             </div>
         )
     }

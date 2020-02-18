@@ -7,16 +7,49 @@
     justify-content: center;
     align-items: center;
     .input-wrapper{
-        width: 30%;
+        width: calc(30% - 2rem);
         display: flex;
+        flex-direction: row;
         justify-content: center;
+        align-items: center;
+        margin: 1rem 0;
+        border-bottom: 0.5px solid #6246ea;
+        padding: 1rem;
         .input{
-            border-radius: 5px;
-            padding: 2rem;
-            font-size: 1.5rem;
-            text-align: center;
-            border: 0.5px solid #6246ea;
+            border: none;
+            outline: none;
+            font-size: 1.2rem;
             width: 100%;
         }
+        .icon{
+            color: #6246ea;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            margin-bottom: 0.2rem;
+        }
+    }
+    .login-btn{
+        margin: 1rem 0;
+        background: #d1d1e9;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        width: 30%;
+        height: 3.2rem;
+        font-size: 1.2rem;
+        outline: none;
+        cursor: pointer;
+    }
+    .login-btn-hover{
+        margin: 1rem 0;
+        background: #6246ea;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        width: 30%;
+        height: 3.2rem;
+        font-size: 1.2rem;
+        outline: none;
+        cursor: pointer;
     }
 }

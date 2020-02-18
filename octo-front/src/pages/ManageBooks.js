@@ -3,9 +3,14 @@ import { observer } from 'mobx-react'
 
 @observer
 class ManageBooks extends React.Component{
+    componentDidMount(){
+        const token = localStorage.getItem("token")
+    }
     render(){
         return(
-            <div></div>
+            <div className="books-container">
+                
+            </div>
         )
     }
 }

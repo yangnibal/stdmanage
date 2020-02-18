@@ -15,8 +15,8 @@ def create_auth_token(sender, instance=None, created=False, **kwargs):
         Token.objects.create(user=instance)
 
 class User(AbstractBaseUser, PermissionsMixin):
-    username = models.CharField(max_length=10, unique=True)
-    password = models.CharField(max_length=20)
+    username = models.TextField(unique=True)
+    password = models.TextField()
     email = models.EmailField(null=True, default=None)
     is_superuser = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)

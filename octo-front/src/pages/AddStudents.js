@@ -28,7 +28,12 @@ class AddStudents extends React.Component{
         })
     }
     componentDidMount(){
-        this.getBooks()
+        const token = localStorage.getItem("token")
+        if(token!==null){
+            this.getBooks()
+        } else {
+            this.props.history.push("/login")
+        }
     }
     render(){
         return(

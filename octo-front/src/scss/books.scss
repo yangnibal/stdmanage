@@ -1,0 +1,14 @@
+.books-container{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: #fffffe;
+    .sticky-container{
+        margin: 5rem;
+        width: calc(100% - 4rem);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}

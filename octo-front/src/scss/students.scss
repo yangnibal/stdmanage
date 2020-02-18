@@ -1,7 +1,7 @@
 a{
     text-decoration: none;
 }
-$color: #0f4c81;
+$color: #6246ea;
 .students-container{
     width: 100vw;
     min-height: 100vh;
@@ -21,7 +21,7 @@ $color: #0f4c81;
             align-items: center;
             width: calc(100% / 6);
             .student-sticky{
-                border: 1px solid $color;
+                border: 1px solid #2b2c34;
                 width: calc(100% - 2rem);
                 margin: 0 1rem;
                 height: 100%;
@@ -30,7 +30,12 @@ $color: #0f4c81;
                 align-items: center;
                 font-size: 1.2rem;
                 font-weight: 600;
-                color: $color;
+                color: #2b2c34;
+                border-radius: 5px;
+                &:first-child{
+                    border: 1px solid $color;
+                    color: $color;
+                }
             }
         }
     }

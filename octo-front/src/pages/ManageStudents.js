@@ -19,7 +19,12 @@ class ManageStudents extends React.Component{
         })
     }
     componentDidMount(){
-        this.getStudents()
+        const token = localStorage.getItem("token")
+        if(token!==null){
+            this.getStudents()
+        } else {
+            this.props.history.push("/login")
+        }
     }
     render(){
         const studentlist = this.students.map(student => (
