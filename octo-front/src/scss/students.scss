@@ -19,7 +19,7 @@ $color: #6246ea;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: calc(100% / 6);
+            width: 250px;
             .student-sticky{
                 border: 1px solid #2b2c34;
                 width: calc(100% - 2rem);
@@ -57,10 +57,10 @@ $color: #6246ea;
             font-size: 1.2rem;
             padding: 1rem;
             text-align: center;
-            outline: none;
             border-radius: 5px;
-            border: 0.5px solid #6246ea;
+            border: 1px solid rgb(238, 238, 238);
             color: #2b2c34;
+            outline-color: #6246ea;
         }
     }
 }
