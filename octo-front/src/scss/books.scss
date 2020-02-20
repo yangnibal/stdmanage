@@ -58,9 +58,27 @@
             border: 1px solid rgb(238, 238, 238);
         }
     }
+    .booklist-container{
+        padding: 0 6rem;
+        width: calc(100% - 12rem);
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        .book-container{
+            box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.43);
+            width: 400px;
+            margin: 1rem;
+            cursor: pointer;
+            .image{
+
+            }
+            .title{
+                color: black;
+            }
+            .authors{
+                color: black;
+            }
+        }
+    }
 }
 
-.book-container{
-    box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.43);
-    width: 500px;
-}

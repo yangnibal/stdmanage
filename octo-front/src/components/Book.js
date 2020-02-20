@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
  
-const Book = (thumbnail, authors, title, addBook) => {
+const Book = ({thumbnail, authors, title, addBook}) => {
     return(
         <Link to="/" className="book-container" onClick={addBook}>
-            <img src={thumbnail} alt="not found"/>
-            <h3>{title}</h3>
-            <b>{authors} 지음</b>
+            <img className="image" src={thumbnail} alt="not found"/>
+            <h4 className="title">{title}</h4>
+            <p className="authors">{authors[0]} 지음</p>
         </Link>
     )
 }

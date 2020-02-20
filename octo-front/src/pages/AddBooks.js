@@ -9,7 +9,7 @@ import '../scss/books.scss'
 @observer
 class AddBooks extends React.Component{
     @observable keyword = ""
-    
+    @observable books = []
     @action handleChange = (e) => {
         const { name, value } = e.target
         this[name] = value
@@ -26,7 +26,7 @@ class AddBooks extends React.Component{
         .then(res => {
             console.log(res.data.documents)
             this.books = res.data['documents']
-            
+            console.log(this.books[0].title)
         })
         .catch(err => {
             console.log(err)
@@ -36,13 +36,12 @@ class AddBooks extends React.Component{
 
     }
     render(){
-        const { store } = this.props
-        const booklist = store.books.map(book => (
+        const booklist = this.books.map(book => (
             <Book
                 authors={book.authors}
                 thumbnail={book.thumbnail}
                 title={book.title}
-                key={book.thumbnail}
+                key={book.isbn}
                 addBook={() => this.addBook()}
             />
         ))
@@ -51,7 +50,7 @@ class AddBooks extends React.Component{
                 <div className="input-wrapper">
                     <input className="input" value={this.keyword} onChange={this.handleChange} name="keyword" placeholder="찾으시는 책 이름을 입력해 주세요..."/>
                 </div>
-                <div>
+                <div className="booklist-container">
                     {booklist}
                 </div>
             </div>
