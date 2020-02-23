@@ -66,7 +66,7 @@
         flex-wrap: wrap;
         .book-container{
             box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.43);
-            width: 400px;
+            width: calc((100% - 8rem) / 4);
             margin: 1rem;
             cursor: pointer;
             .image{

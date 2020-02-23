@@ -16,7 +16,7 @@ class AddBooks extends React.Component{
         this.searchBook(value)
     }
     @action searchBook = (keyword) => {
-        const _apiKey = '830abcdf4f4174ae428b50d1997d5167';
+        const _apiKey = '77d33fa0083b42ec75a7c2b03e0c7445';
         axios.get(`https://dapi.kakao.com/v3/search/book?query=${keyword}`, {
             headers: {
                 'Content-Type': 'application/json; charset=utf-8',
@@ -32,8 +32,22 @@ class AddBooks extends React.Component{
             console.log(err)
         })
     }
-    @action addBook = () => {
-
+    @action addBook = (title) => {
+        /*const token = localStorage.getItem("token")
+        axios.post("http://localhost:8000/books/", ({
+            name: title
+        }), {
+            headers: {
+                Authorization: "Token " + token
+            }
+        })
+        .then(res => {
+            console.log(res)
+            alert("등록되었습니다")
+        })
+        .catch(err => {
+            console.log(err)
+        })*/
     }
     render(){
         const booklist = this.books.map(book => (
@@ -42,7 +56,7 @@ class AddBooks extends React.Component{
                 thumbnail={book.thumbnail}
                 title={book.title}
                 key={book.isbn}
-                addBook={() => this.addBook()}
+                addBook={() => this.addBook(book.title)}
             />
         ))
         return(
