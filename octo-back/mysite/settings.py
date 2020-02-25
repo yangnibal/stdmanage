@@ -18,7 +18,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-FILE_UPLOAD_MAX_MEMORY_SIZE = "2621440"
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -89,12 +89,15 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'octo_db',
-        'USER': 'octopus',
-        'PASSWORD': '1234567890',
-        'HOST': 'localhost',
-        'PORT': '8080'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3'
+        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #'NAME': 'octo_db',
+        #'USER': 'octopus',
+        #'PASSWORD': '1234567890',
+        #'HOST': 'localhost',
+        #'PORT': '8080'
+
     }
 }
 

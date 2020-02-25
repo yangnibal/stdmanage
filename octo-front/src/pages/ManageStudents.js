@@ -9,6 +9,8 @@ import '../scss/students.scss'
 @observer
 class ManageStudents extends React.Component{
     @observable students = []
+    @observable isAddOn = false
+    @observable stdname = ""
     @action getStudents = () => {
         axios.get("http://localhost:8000/students/")
         .then(res => {
@@ -17,6 +19,13 @@ class ManageStudents extends React.Component{
         .catch(err => {
             console.log(err)
         })
+    }
+    @action change = () => {
+        this.isAddOn = !this.isAddOn
+    }
+    @action handleChange = (e) => {
+        const { name, value } = e.target
+        this[name] = value
     }
     componentDidMount(){
         const token = localStorage.getItem("token")
@@ -36,8 +45,15 @@ class ManageStudents extends React.Component{
         return(
             <div className="students-container">
                 <div className="sticky-container">
+                    {this.isAddOn===false ? null : 
                     <div className="student">
-                        <Link to="/students/add" className="student-sticky">학생 추가하기</Link>
+                        <div className="student-sticky">
+                            <input className="input-name" name="stdname" value={this.stdname} onChange={this.handleChange} placeholder="학생 이름"/>
+                        </div>
+                    </div>
+                    }
+                    <div className="student">
+                        <div onClick={this.change} className="student-sticky">학생 추가하기</div>
                     </div>
                     {studentlist.reverse()}
                 </div>

@@ -6,6 +6,7 @@ import ManageStudents from './pages/ManageStudents'
 import AddStudents from './pages/AddStudents';
 import Login from './pages/Login';
 import AddBooks from './pages/AddBooks';
+import AddBookDetail from './pages/AddBookDetail';
 
 class App extends React.Component{
 	render(){
@@ -17,6 +18,7 @@ class App extends React.Component{
 				<Route exact path="/students/add" component={AddStudents}/>
 				<Route exact path="/login" component={Login}/>
 				<Route exact path="/books/add" component={AddBooks}/>
+				<Route exact path="/books/add/:bookid" component={AddBookDetail}/>
 			</Switch>
 		)
 	}

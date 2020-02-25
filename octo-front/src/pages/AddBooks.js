@@ -49,6 +49,9 @@ class AddBooks extends React.Component{
             console.log(err)
         })*/
     }
+    @action saveClick = (title) => {
+        localStorage.setItem("title", title)
+    }
     render(){
         const booklist = this.books.map(book => (
             <Book
@@ -56,7 +59,8 @@ class AddBooks extends React.Component{
                 thumbnail={book.thumbnail}
                 title={book.title}
                 key={book.isbn}
-                addBook={() => this.addBook(book.title)}
+                link={book.isbn}
+                saveClick={() => this.saveClick(book.title)}
             />
         ))
         return(

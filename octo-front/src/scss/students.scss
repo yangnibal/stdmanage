@@ -36,6 +36,11 @@ $color: #6246ea;
                     border: 1px solid $color;
                     color: $color;
                 }
+                .input-name{
+                    border: none;
+                    border-bottom: 0.5px solid #6246ea;
+                    outline: none;
+                }
             }
         }
     }

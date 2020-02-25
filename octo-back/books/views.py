@@ -4,6 +4,7 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from .models import Books
 from .serializers import BooksSerializer
+from .hwp import conversion
 
 class BooksViewSet(viewsets.ModelViewSet):
     queryset = Books.objects.all()
@@ -21,4 +22,10 @@ class BooksViewSet(viewsets.ModelViewSet):
         book = Books.objects.get(name=request.data['name'])
         book.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+    @action(detail=False, list=True, methods=['POST'])
+    def getprobs(self, request):
+        book = Books.objects.get(name=request.data['name'])
+        data = conversion(book.file)
+        return Response(data)
 # Create your views here.
